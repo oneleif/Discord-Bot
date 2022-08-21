@@ -1,0 +1,22 @@
+{
+  "name": "@oneleif/discord-bot",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "nodemon -e ts -x \"tsc && vite build -l error && node .\"",
+    "build": "tsc && vite build",
+    "lint": "prettier --write src/*"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7"
+  },
+  "dependencies": {
+    "discord.js": "^14.2.0"
+  }
+}
