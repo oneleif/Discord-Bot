@@ -2,6 +2,10 @@ import chalk, { ChalkInstance } from "chalk";
 
 export declare type LogLevel = 'INFO' | 'WARNING' | 'ERROR';
 
+export function info(message: string) { log('INFO', message); }
+export function warning(message: string) { log('WARNING', message); }
+export function error(message: string) { log('ERROR', message); }
+
 export function log(level: LogLevel = 'INFO', message: string) {
     const date = new Date();
     const formattedMessage = `[${chalk.dim(`${date.toLocaleDateString()} ${date.toLocaleTimeString()}`)}] [${getChalkForLevel(level)(level)}] ${message}`;
