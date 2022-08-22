@@ -5,18 +5,21 @@
   "type": "module",
   "main": "dist/main.js",
   "scripts": {
-    "start": "nodemon -e ts -x \"tsc && vite build -l error && node .\"",
-    "build": "tsc && vite build",
+    "start": "nodemon -e ts -x \"tsc && node .\"",
+    "build": "tsc",
     "lint": "prettier --write src/*"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/dotenv": "^8.2.0",
     "eslint": "^8.22.0",
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.7"
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "discord.js": "^14.2.0"
+    "chalk": "^5.0.1",
+    "discord.js": "^14.2.0",
+    "dotenv": "^16.0.1"
   }
 }
