@@ -20,8 +20,10 @@
   },
   "dependencies": {
     "@octokit/core": "^4.0.5",
+    "@octokit/webhooks": "^10.1.5",
     "chalk": "^5.0.1",
     "discord.js": "^14.2.0",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "octokit": "^2.0.7"
   }
 }

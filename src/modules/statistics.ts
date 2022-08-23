@@ -1,9 +1,18 @@
 import { Octokit } from "@octokit/core";
+import { Webhooks } from "@octokit/webhooks";
 import { ChannelType, Client } from "discord.js";
 
 export type Statistics = { readonly member_count: number, readonly repository_count: number }
 
 export default function init(client: Client) {
+    const webhooks = new Webhooks({
+        secret: process.env.APP_GH_TOKEN!!,
+      });
+      
+      webhooks.onAny(({ id, name, payload }) => {
+        console.log`${id} - ${name} - ${payload}`;
+      });
+
     setInterval(async () => {
         const guild = client.guilds.cache.first()!!;
 
@@ -42,7 +51,8 @@ async function fetchRepositoryCount(): Promise<number> {
     const octokit = new Octokit({
         auth: process.env.APP_GH_TOKEN
     });
-
+    
+    
     const repositories = await octokit.request('GET /orgs/{org}/repos', {
         org: 'oneleif',
         type: 'public',
